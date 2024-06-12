@@ -262,3 +262,216 @@ Two labels indicating trip segments, such as "Agra, Delhi" and "Mathura, Rishike
 Book Now Button: At the bottom, a centered button labeled "Book Now" is styled with rounded corners and a blue background. When pressed, it navigates to the BookFlight page using Flutter's navigation system.
 
 The code creates a structured and user-friendly interface for searching and booking flights, with clear sections and navigation.
+Next apppage in this app is book_flight_page the page is like below:
+
+import 'package:flutter/material.dart';
+
+class BookFlight extends StatefulWidget {
+  const BookFlight({super.key});
+
+  @override
+  State<BookFlight> createState() => _BookFlightState();
+}
+
+class _BookFlightState extends State<BookFlight> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child: Column(
+          children: [
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(300),
+                  bottomRight: Radius.circular(300),
+                ),
+                  image: DecorationImage(
+                    image: AssetImage('assets/img_6.png'),
+                  )
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text('Book Your flight',style: TextStyle(
+              fontSize: 18,
+              color: Colors.brown,
+            ),),
+            SizedBox(
+              height:10 ,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 40,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromRGBO(64, 147, 206, 100),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      onPressed: (){},
+                      child: Text('One Way',style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),),
+                  ),
+                ),
+                Container(
+                  height: 40,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child:ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromRGBO(64, 147, 206, 100),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    onPressed: (){},
+                    child: Text('Round Trip',style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),),
+                  ),
+                ),
+  ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              width: 308,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('From'),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  SizedBox(
+                    height: 35,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        fillColor: Color.fromRGBO(224, 237, 246, 100),
+                        filled: true,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text('To'),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  SizedBox(
+                    height: 35,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        fillColor: Color.fromRGBO(224, 237, 246, 100),
+                        filled: true,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text('Date'),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  SizedBox(
+                    height: 35,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        fillColor: Color.fromRGBO(224, 237, 246, 100),
+                        filled: true,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 280,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child:ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromRGBO(64, 147, 206, 100),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      onPressed: (){},
+                      child: Text('View Flights',style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+Explaination of this code is below:
+
+This Flutter widget represents a flight booking page where users can book flights by selecting options like one-way or round-trip and entering flight details.
+
+Code Breakdown
+BookFlight Class: This is a StatefulWidget that creates an instance of _BookFlightState.
+
+_BookFlightState Class:
+
+build Method: The core method to build the UI of the flight booking page.
+Scaffold Widget: Provides the structure for the page, including the app bar and body.
+Body Container: Contains a Column widget that organizes the UI elements vertically.
+
+Top Image Container: Displays an image with rounded bottom corners.
+"Book Your Flight" Text: A heading for the booking section.
+Flight Type Buttons: Two buttons ("One Way" and "Round Trip") allowing users to select the type of flight.
+Input Fields: Three text fields to enter the departure location, destination, and date.
+View Flights Button: A button to view available flights based on the entered details.
+UI Elements
+Top Image Container: Displays an image with bottom-left and bottom-right rounded corners.
+Flight Type Buttons: Two buttons for selecting either a one-way or round trip.
+Input Fields:
+"From": Enter the departure location.
+"To": Enter the destination.
+"Date": Enter the travel date.
+View Flights Button: A button to submit the entered details and view available flights.
+Styling
+The buttons and input fields are styled with rounded corners and specific colors.
+The layout includes padding, spacing, and specific height and width constraints to ensure a consistent and user-friendly interface.
+Dependencies
+Material.dart: Used to create material design widgets.
+AssetImage: Used to load the image from the assets directory.
+so this the frontend basic app .the features of flutter I used in this is asset image ,scafold,container,box-decorations,routes etc.
