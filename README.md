@@ -145,3 +145,102 @@ Navigator.pushNamed(context, 'welcome'): Navigates to the welcome page when the 
 This setup provides a user-friendly login interface with a visually appealing background, input fields for email and name, and a simple navigation mechanism to the welcome page.
 Next page in this app is welcome page 
 The page is like following:
+
+import 'package:firstapp/SerachFlightPage.dart';
+import 'package:flutter/material.dart';
+class MyWelcome extends StatefulWidget {
+  const MyWelcome({super.key});
+ @override
+  State<MyWelcome> createState() => _MyWelcomeState();
+}
+class _MyWelcomeState extends State<MyWelcome> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromRGBO(211, 221, 229, 100),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Container(
+                height: 313,
+                width: 304,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: AssetImage('assets/img_6.png'),
+                  )
+                ),
+                ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                'Let us enjoy ',style: TextStyle(
+                color: Colors.black12,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+              ),
+              Text('New World',style: TextStyle(
+                color: Colors.black12,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),),
+              SizedBox(
+                height: 20,
+              ),
+              Text('Search the safest destination',style: TextStyle(
+                fontSize: 10,
+                fontWeight: FontWeight.bold,
+              ),),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 50,
+                width: 260,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromRGBO(64, 147, 206, 100),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SerachFlightpage()));
+                  },
+                  child: Text(
+                    'Get Started',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+),
+],
+          ),
+        ),
+      ),
+    );
+  }
+}
+explaination of thus page is:
+This Flutter code defines a stateful widget, MyWelcome, which serves as a welcome screen for an application. The main components are:
+
+Background and Container Setup: The screen has a light blue background color. Inside the screen, a centered container is used to hold the main content with padding around it.
+
+Circular Image: At the top, there's a circular container displaying an image (img_6.png) from the assets. This container is styled to be circular with a white background.
+
+Text Elements: Below the image, two large, bold text elements display the messages "Let us enjoy" and "New World," both in a light black color. These are followed by a smaller text that reads "Search the safest destination."
+
+Button: At the bottom, there is a blue button labeled "Get Started." This button is styled with rounded corners and, when pressed, navigates to a new page called SerachFlightpage using Flutter's navigation system.
+The code ensures the welcome screen is visually appealing with a structured layout and intuitive navigation to the next screen.
+
+Next page in this app is search_flight_page    
