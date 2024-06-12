@@ -244,3 +244,21 @@ Button: At the bottom, there is a blue button labeled "Get Started." This button
 The code ensures the welcome screen is visually appealing with a structured layout and intuitive navigation to the next screen.
 
 Next page in this app is search_flight_page    
+This Flutter code defines a stateful widget, SerachFlightpage, which serves as a flight search and booking page in an application. The main components are:
+
+State Management: The page maintains an integer state _selectedIndex to track the selected tab index, and a method _onItemTapped to update this index.
+
+Scaffold and Background: The page uses a Scaffold widget with a transparent background. The main content is wrapped in a container with padding.
+
+Header: At the top, a row displays a greeting "Hi User!" and a notification icon.
+
+Search Section: Below the header, there are two large, bold text elements asking "Where You Want to Go?" followed by a text field for searching flights. The text field includes a search icon and a hint text "Search A Flight."
+
+Upcoming Trips Section: A section titled "Our Upcoming Trips" displays a container with trip details. This container includes:
+
+Dates and times for departure and arrival.
+Departure and arrival locations represented with text and an icon.
+Two labels indicating trip segments, such as "Agra, Delhi" and "Mathura, Rishikesh."
+Book Now Button: At the bottom, a centered button labeled "Book Now" is styled with rounded corners and a blue background. When pressed, it navigates to the BookFlight page using Flutter's navigation system.
+
+The code creates a structured and user-friendly interface for searching and booking flights, with clear sections and navigation.
